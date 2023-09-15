@@ -6,7 +6,6 @@ import Link from 'next/link';
 const MovieCard: React.FC = () => {
   const [topMovies, setTopMovies] = useState([]);
   const [genres, setGenres] = useState({});
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchGenres = async () => {
