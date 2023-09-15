@@ -8,7 +8,7 @@ import styles from '../../moviedetails.module.css';
 
 const MovieDetailsPage: React.FC = () => {
   const [movieDetails, setMovieDetails] = useState(null);
-  const [error, setError] = useState(null);
+
   
 
    //Api Integration below
@@ -22,14 +22,7 @@ const MovieDetailsPage: React.FC = () => {
         const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=903c5cda1d547795877add187ce12937`);
 
 
-        if (!response.ok) {
-          if (response.status === 403) {
-            setError(`API request refused to load. Please try again later.`);
-          } else {
-            setError(`Error fetching genres: ${response.statusText}`);
-          }
-          return;
-        }
+       
         const data = await response.json();
         setMovieDetails(data);
       }
