@@ -14,18 +14,18 @@ export default function Home() {
 
          <nav>
            <div className={styles.logo}>
-            <img src='../../tv.svg' />
+            <img src='../../tv.svg' alt='that'/>
             <label>MovieBox</label>
            </div>
 
            <form className={styles.form}>
             <input type='text' placeholder='What do you want to search'/>
-            <img src='../../icon.svg' />
+            <img src='../../icon.svg' alt='this'/>
            </form>
 
            <div className={styles.navbar}>
             <a>Sign Up</a>
-            <img src="../../Menu.png" />
+            <img src="../../Menu.png" alt='to'/>
            </div>
 
          </nav>
@@ -41,7 +41,7 @@ export default function Home() {
           target of hit men and women everywhere.
          </p>
 
-         <img src='../../Button.svg' className={styles.go}/>
+         <img src='../../Button.svg' className={styles.go} alt='for'/>
      </div>
 
       <MovieCard />

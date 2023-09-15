@@ -7,6 +7,7 @@ const MovieCard: React.FC = () => {
   const [topMovies, setTopMovies] = useState([]);
   const [genres, setGenres] = useState({});
   const [error, setError] = useState(null);
+  const [like, setlike] = useState(false)
 
   useEffect(() => {
     const fetchGenres = async () => {
@@ -32,7 +33,7 @@ const MovieCard: React.FC = () => {
 
     const fetchTopMovies = async () => {
       const response = await fetch(
-        `https://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc&api_key=903c5cda1d547795877add187ce12937`
+        `https://api.themoviedb.org/3/movie/top_rated?api_key=903c5cda1d547795877add187ce12937`
       );
       const data = await response.json();
       setTopMovies(data.results.slice(0, 10));
@@ -50,7 +51,7 @@ const MovieCard: React.FC = () => {
     return <div>Checking your internet connection...</div>;
   }
 
-  const [like, setlike] = useState(false)
+ 
   const handleLikeClick = (movieId) => {
     setTopMovies(prevMovies => {
       return prevMovies.map(movie => {
@@ -69,12 +70,15 @@ const MovieCard: React.FC = () => {
       <h1>Top 10 Movies</h1>
       <span>
         <label>See more</label>
-        <img src="../../arroe.svg" />
+        <img src="../../arroe.svg"  alt='yo'/>
       </span>
       </div>
       <div className="movie-grid">
         {topMovies.map((movie) => (
           <div className="movie-card" key={movie.id} data-testid="movie-card">
+                <h2 onClick={() => handleLikeClick(movie.id)} key={movie.id} className='likebutton'> 
+                {movie.liked ? '❤️' : '🤍' }
+            </h2>
             
             <Link href={`/movies/${movie.id}`}>
          
@@ -83,12 +87,11 @@ const MovieCard: React.FC = () => {
                   src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                   alt={movie.title}
                   data-testid='movie-poster'
+                  
                 />
         
             
-            <h2 onClick={() => handleLikeClick(movie.id)} key={movie.id} className='likebutton'> 
-                {movie.liked ? '❤️' : '🤍' }
-            </h2>
+        
             <h2 className="movie-title"  data-testid='movie-title' >{movie.title}</h2>
             <p className="movie-release-date" data-testid='movie-release-date'>Release Date: {movie.release_date}</p>
             <p className="movie-genres">

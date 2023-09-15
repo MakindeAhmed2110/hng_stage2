@@ -5,11 +5,10 @@
 
 import React, { useState, useEffect } from 'react';
 import styles from '../../moviedetails.module.css';
+import Image from 'next/image';
 
 const MovieDetailsPage: React.FC = () => {
   const [movieDetails, setMovieDetails] = useState(null);
-  const [error, setError] = useState(null);
-  
 
    //Api Integration below
 
@@ -22,14 +21,7 @@ const MovieDetailsPage: React.FC = () => {
         const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=903c5cda1d547795877add187ce12937`);
 
 
-        if (!response.ok) {
-          if (response.status === 403) {
-            setError(`API request refused to load. Please try again later.`);
-          } else {
-            setError(`Error fetching genres: ${response.statusText}`);
-          }
-          return;
-        }
+      
         const data = await response.json();
         setMovieDetails(data);
       }
@@ -54,26 +46,26 @@ const MovieDetailsPage: React.FC = () => {
     <div className={styles.maint}>
         <div className={styles.others}>
           <div className={styles.logo}>
-            <img src='../../tv.svg' />
+            <img src='../../tv.svg' alt='ghj'/>
             <label>MovieBox</label>
            </div>
 
            <ul>
             <li>
-                <img src='../../Home.svg' />
+                <img src='../../Home.svg' alt='soso'/>
                 <label>Home</label>
             </li>
             <li className={styles.movy}>
-                <img src='../../Movie Projector.png' />
+                <img src='../../Movie Projector.png' alt='yol'/>
                 <label>Movies</label>
 
             </li>
             <li >
-                <img src='../../Tv Show.svg' />
+                <img src='../../Tv Show.svg' alt='yolla'/>
                 <label>TV Series</label>
             </li>
             <li>
-                <img src='../../Calendar.svg' />
+                <img src='../../Calendar.svg' alt='this' />
                 <label>Upcoming</label>
             </li>
            </ul>
@@ -90,7 +82,7 @@ const MovieDetailsPage: React.FC = () => {
            </div>
 
            <div className={styles.logout}>
-            <img src='../../Logout.svg' />
+            <img src='../../Logout.svg' alt='aoo'/>
             <label>Logout</label>
            </div>
         </div>
@@ -116,13 +108,13 @@ const MovieDetailsPage: React.FC = () => {
         <li>Director: <span>Joseph Kosinski</span></li>
         <li>Writers :  <span>Jim Cash, Jack Epps Jr, Peter Craig</span></li>
         <li>Stars :  <span>Tom Cruise, Jennifer Connelly, Miles Teller</span></li>
-        <img src='../../last.svg' />
+        <img src='../../last.svg' alt='gh'/>
       </ul>
       </div>
      
      <div className={styles.collection}>
-      <img src='../../ratebutton.svg.svg' />
-      <img src='../../otherss.svg' />
+      <img src='../../ratebutton.svg.svg' alt='gh'/>
+      <img src='../../otherss.svg' alt='gh'/>
      </div>
 
     </main>
