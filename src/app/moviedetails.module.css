@@ -1,0 +1,178 @@
+
+/* YourStyles.module.css */
+
+.maint {
+    display: flex;
+    flex-direction: row; /* Flex row direction */
+    overflow-x: hidden; /* Horizontal scrollbar for the scrollable part */
+    height: 100vh; /* Full viewport height */
+    gap: 20px;
+
+  }
+  
+  .others {
+    width: 40%; /* Fixed width for .others */
+    background-color: #fff; /* Optional: Background color */
+    /* Optional: Padding */
+    position: sticky;
+    top: 0; /* Sticky to the top */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #0000004D;
+    border-radius: 0 50px  50px 0;
+  }
+  
+  .poster {
+    flex-grow: 1; /* Allow .poster to grow and occupy remaining space */
+    padding: 16px; /* Optional: Padding */
+    overflow-y: auto; /* Vertical scrollbar for .poster */
+  }
+  
+.logo{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    padding: 16px;
+}
+ .logo img{
+   height: 50px;
+  }
+  .logo label{
+    font-size: 24px ;
+    font-weight: 700;
+  }
+  
+  .others ul{
+    padding-top: 10px;
+    list-style-type: none;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-left: 0;
+    cursor: pointer;
+
+  }
+  .others ul li{
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000de;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    padding: 16px;
+    cursor: pointer;
+  }
+  .others ul li img{
+    height: 20px;
+  }
+  .movy{
+    background-color: #BE123C1A;
+    border-right: 3px solid #be123c;
+    
+  }
+
+  .quizzes{
+    padding: 25px 10px 10px;
+    border: 1px solid #be123d8b;
+    margin: 16px;
+    border-radius: 15px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+  
+  }
+  .quiz1{
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .quizzes button{
+    background: #BE123C33;
+    border: 2px solid #be123c;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+    padding:  10px;;
+  }
+
+  .logout{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    padding: 16px;
+  }
+  .logout img{
+    height: 25px;
+  }
+
+
+
+  .maint main{
+    display: flex;
+    width: 95%;
+    gap: 20px;
+  }
+  .movy_image{
+    width: 95%;;
+  }
+
+  .runtime{
+    color: #be123c;
+  }
+  .data1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .data1 h1{
+    font-size: 24px;
+  }
+  .data1 button{
+  
+border-radius: 15px;
+border: 1px;
+padding: 10px;
+font-size: 12px;
+
+  }
+  .data ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style-type: none;
+    padding-left: 0;
+    padding-top: 30px;
+  }
+  .data ul li {
+    font-size: 18px;
+   
+  }
+  .data ul li span{
+    color: #be123c;
+  }
+  .data ul img{
+    width: 80%;
+  }
+
+  .collection{
+    height: 50px;
+  }
+
+  @media (max-width: 987px) {
+    .others{
+        display: none;;
+    }
+    .maint{
+        padding-top: 50px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .maint main{
+        flex-direction: column;
+    }
+    .data1{
+        flex-direction: column;
+
+    }
+  }
