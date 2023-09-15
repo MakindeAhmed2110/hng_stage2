@@ -14,14 +14,7 @@ const MovieCard: React.FC = () => {
           `https://api.themoviedb.org/3/genre/movie/list?api_key=903c5cda1d547795877add187ce12937`
         );
 
-        if (!response.ok) {
-          if (response.status === 403) {
-            setError(`API request refused to load. Please try again later.`);
-          } else {
-            setError(`Error fetching genres: ${response.statusText}`);
-          }
-          return;
-        }
+      
         const data = await response.json();
         const genreObject = {};
         data.genres.forEach((genre) => {
