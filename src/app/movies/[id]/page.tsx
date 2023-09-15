@@ -9,6 +9,11 @@ import Image from 'next/image';
 
 const MovieDetailsPage: React.FC = () => {
   const [movieDetails, setMovieDetails] = useState(null);
+<<<<<<< HEAD
+=======
+
+  
+>>>>>>> a05ce396e5dabb4e0c4fe73f60e5ea9609050201
 
    //Api Integration below
 
@@ -21,7 +26,11 @@ const MovieDetailsPage: React.FC = () => {
         const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=903c5cda1d547795877add187ce12937`);
 
 
+<<<<<<< HEAD
       
+=======
+       
+>>>>>>> a05ce396e5dabb4e0c4fe73f60e5ea9609050201
         const data = await response.json();
         setMovieDetails(data);
       }
